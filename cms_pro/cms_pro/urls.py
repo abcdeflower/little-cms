@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include
+from django.conf.urls import include,url
 from cms import views
+from django.views.static import serve
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cms/',include('cms.urls')),
     path('serach/',views.search,name='cms-search'),
+    path('live/',include('liveblog.urls')),
+    url(r'^(?P<path>.*)',serve),
 ]
