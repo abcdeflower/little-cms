@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+    <head>
+    	<title>{% block title %}{% endblock %}</title>
+    	<style type="text/css" media="screen">
+            body { color: #000; background: #fff; padding: 0 2em; margin: 0; font-family:Microsoft Yahei;  }
+            h1 { color: #fff; background: #1162A0; padding: 1% 0; margin: 0;}
+            h2 { color: #1162A0;  background: #aaa; border-top: 1px dotted #fff; padding: 1% 2%; margin: 0;}
+            h3 { color: #1162A0; border-top: 1px dotted #fff; padding: 1% 2%; margin: 0; }
+            p { margin: 1em 20 }            
+            a { text-decoration: none; color: #444; }
+            label { color: #444; }
+            .small { font-size: 75%; color: #777; }
+            #header { font-weight: bold; background: #1162A0; padding: 1% 2%; }
+            #story-body { background: #ccc; padding: 2%; }
+            #story-list { background: #ccc; padding: 1% 1% 1% 4%; }
+            #story-list li { margin: .5em 0; }
+    	</style>
+    </head>
+    <body>
+        <div id="header">
+        <h1>啦啦啦</h1>
+            <form action="{% url 'cms-search' %}" method="get">
+                <a href="{% url 'cms-home' %}">首页</a>
+                <label for="q"> &bull; 搜索:</label> <input type="text" name="q">
+            </form>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

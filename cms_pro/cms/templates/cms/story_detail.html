@@ -1,0 +1,10 @@
+{% extends "cms/base.html" %}
+{% block title %}{{ story.title }}{% endblock %}
+{% block content %}
+    <h2>{{ story.title }}</h2>
+    <h3>分类：<a href="{% url 'cms-category' story.category.slug %}">{{ story.category }}</a></h3>
+    <div id="story-body">
+        {{ story.html_content|safe }}
+    <p class="small">更新于 {{ story.modified }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "cms/base.html" %}
+{% block content %}
+    {% if heading %}
+        <h2>{{ heading }}</h2>
+    {% endif %}
+    <ul id="story-list">
+    {% for story in story_list %}
+        <li><a href="{{ story.get_absolute_url }}">{{ story.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
